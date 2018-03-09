@@ -9,13 +9,27 @@
   <link rel='stylesheet' type='text/css' href='./style/style.css'>
 </head>
 <body>
-  <!-- 
+  <!--
     HTML NEEDS
     - input box
     - submit button
     - an element with a unique class, id, or data-attribute
       for each of the weather metrics you want to put on the page.
    -->
+  <main class="container">
+    <form>
+      <input class="input" type="text" placeholder="Zipcode" required="required" />
+      <button type="submit">Submit</button>
+    </form>
+
+    <div class="weather-info">
+      <p class="city"></p>
+      <p class="current-temp"></p>
+      <p class="weather-desc"></p>
+      <p class="min-temp"></p>
+      <p class="max-temp"></p>
+    </div>
+  </main>
   <script src='./src/main.js'></script>
 </body>
 </html>
