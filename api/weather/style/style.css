@@ -1,7 +1,61 @@
 /* style needs
-
 - a media query
 - mobile-first considerations
-
-
 */
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body,
+html {
+  background-color: #73d7cd;
+}
+
+form {
+  text-align: right;
+  padding: 20px;
+}
+
+input {
+  opacity: 0.8;
+}
+
+.weather-info {
+  margin: 70px 25px 70px 25px;
+}
+
+h1, h2, p {
+  text-align: center;
+  font-family: "Quicksand", "Helvetica", sans-serif;
+  color: #f8f5e9;
+}
+
+h1 {
+  font-size: 100px;
+  margin-top: 40px;
+}
+
+.weather-desc {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 15px;
+  color: #545454;
+  font-weight: light;
+}
+
+p {
+  font-size: 50px;
+}
+
+.temp-container {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  align-content: center;
+}
+
+p {
+  margin: 5px 40px;
+}

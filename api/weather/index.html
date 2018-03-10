@@ -11,16 +11,20 @@
 <body>
   <main class="container">
     <form>
-      <input class="input" type="text" placeholder="Enter ZIP code" required="required" />
+      <input class="input" type="number" placeholder="Enter ZIP code" required="required" />
       <button class="submit" type="submit">Submit</button>
     </form>
 
     <div class="weather-info">
-      <p class="city"></p>
-      <p class="current-temp"></p>
-      <p class="weather-desc"></p>
-      <p class="min-temp"></p>
-      <p class="max-temp"></p>
+      <h2 class="city"></h2>
+      <h1 class="current-temp"></h1>
+      <h2 class="weather-desc"></h2>
+      <div class="temp-container">
+        <h2 class="temps1"></h2>
+          <p class="min-temp"></p>
+        <h2 class="temps2"></h2>
+          <p class="max-temp"></p>
+      </div>
     </div>
   </main>
   <script src='./src/main.js'></script>

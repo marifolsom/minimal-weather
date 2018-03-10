@@ -1,23 +1,5 @@
 console.log('main.js is connected!');
 
-/*
-
-Here's an overview of the steps you'll follow to get your app to work...
-
-STEPS
-
-1. when the page loads
-  - add an event listener to the button
-2. When the button is clicked
-  - grab the input
-  - store the value
-  - make an API request based on the input value
-3. When the API response is returned
-  - grab all the appropriate DOM elements
-  - append the data to the DOM
-
-*/
-
 
 // Make a variable to hold the zipcodeInput value, default: 10001
 let zipcode = 10001;
@@ -48,6 +30,13 @@ let makeFirstLetterCapital = (string) => {
 }
 
 
+// Make a function that converts kevlin to celcius
+let convertToCelcius = (temp) => {
+  celciusTemp = temp - 273.15;
+  return celciusTemp;
+}
+
+
 // Make a function that creates an API request and returns a response in json
 let getJSON = (url) => {
   return fetch(url).then(response => response.json());
@@ -66,14 +55,16 @@ let getWeather = (zipcode) => {
     cityName = json.name;
     countryName = json.sys.country;
     currentTemp = json.main.temp;
-    weatherDesc = json.weather[0].description;
+    weatherDesc = json.weather[0].main;
     minTemp = json.main.temp_min;
     maxTemp = json.main.temp_max;
     // Update the text content of each html element
     document.querySelector('.city').textContent = cityName + ', ' + countryName;
-    document.querySelector('.current-temp').textContent = currentTemp + ' °K';
+    document.querySelector('.current-temp').textContent = Math.floor(convertToCelcius(currentTemp)) + '°';
     document.querySelector('.weather-desc').textContent = makeFirstLetterCapital(weatherDesc);
-    document.querySelector('.min-temp').textContent = 'MIN ' + minTemp + ' °K';
-    document.querySelector('.max-temp').textContent = 'MAX ' + maxTemp + ' °K';
+    document.querySelector('.min-temp').textContent = Math.floor(convertToCelcius(minTemp)) + '°';
+    document.querySelector('.max-temp').textContent = Math.floor(convertToCelcius(maxTemp)) + '°';
+    document.querySelector('.temps1').textContent = 'MIN';
+    document.querySelector('.temps2').textContent = 'MAX'
   });
 }
