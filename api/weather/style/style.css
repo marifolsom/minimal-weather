@@ -42,7 +42,7 @@ h2 {
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 80px;
   margin-top: 40px;
 }
 
@@ -70,7 +70,7 @@ p {
   font-size: 50px;
 }
 
-.temp-container {
+.max-min {
   height: 80px;
   display: flex;
   align-items: center;
