@@ -19,28 +19,8 @@ STEPS
 */
 
 
-// Make a variable to hold the zipcodeInput value, default: Anchorage
-let zipcode = 99501;
-
-
-// Make a function that creates an API request and returns a response in json
-let getJSON = (url) => {
-  return fetch(url).then(response => response.json());
-}
-
-
-// Make a function that creates an API request with the user's input
-let getWeather = (zipcode) => {
-  // Make an API request with the user's inputted zipcode
-  getJSON(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&APPID=cfe78bea462ec765e53c4ee7dc76d7ec`)
-  .then(json => {
-    console.log(json);
-    // City name, current temperature, weather description, min temp, max temp
-    // Keep track of what you're dealing with... object? array?
-    // Math.floor for kelvin conversion!
-  });
-}
-getWeather(zipcode);
+// Make a variable to hold the zipcodeInput value, default: 10001
+let zipcode = 10001;
 
 
 // Make a function for that grabs the user's input and stores the value
@@ -51,9 +31,49 @@ let getZipCode = (evt) => {
   let zipcodeInput = document.querySelector('.input');
   zipcode = zipcodeInput.value;
   console.log(zipcode);
+  // Add event listener to submit button that calls getWeather()
+  let submitButton = document.querySelector('.submit');
+  submitButton.addEventListener('click', getWeather(zipcode));
 }
 
 
 // When the page loads, add an event listener to the submit button
 let submitButton = document.querySelector('.submit');
 submitButton.addEventListener('click', getZipCode);
+
+
+// Make a function that capitalizes the firt letter of a string
+let makeFirstLetterCapital = (string) => {
+  return string[0].toUpperCase() + string.slice(1);
+}
+
+
+// Make a function that creates an API request and returns a response in json
+let getJSON = (url) => {
+  return fetch(url).then(response => response.json());
+}
+
+
+// Make a function that creates an API request with the user's input
+let getWeather = (zipcode) => {
+  // Make variables for city name, current temperature, weather description, min temp, max temp
+  let cityName, countryName, currentTemp, weatherDesc, minTemp, maxTemp;
+  // Make an API request with the user's inputted zipcode
+  getJSON(`https://api.openweathermap.org/data/2.5/weather?zip=${zipcode},us&APPID=cfe78bea462ec765e53c4ee7dc76d7ec`)
+  .then(json => {
+    console.log(json);
+    // Assign a JSON value to each variable
+    cityName = json.name;
+    countryName = json.sys.country;
+    currentTemp = json.main.temp;
+    weatherDesc = json.weather[0].description;
+    minTemp = json.main.temp_min;
+    maxTemp = json.main.temp_max;
+    // Update the text content of each html element
+    document.querySelector('.city').textContent = cityName + ', ' + countryName;
+    document.querySelector('.current-temp').textContent = currentTemp + ' °K';
+    document.querySelector('.weather-desc').textContent = makeFirstLetterCapital(weatherDesc);
+    document.querySelector('.min-temp').textContent = 'MIN ' + minTemp + ' °K';
+    document.querySelector('.max-temp').textContent = 'MAX ' + maxTemp + ' °K';
+  });
+}
