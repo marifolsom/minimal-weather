@@ -53,18 +53,35 @@ let getWeather = (zipcode) => {
     console.log(json);
     // Assign a JSON value to each variable
     cityName = json.name;
-    countryName = json.sys.country;
     currentTemp = json.main.temp;
     weatherDesc = json.weather[0].main;
     minTemp = json.main.temp_min;
     maxTemp = json.main.temp_max;
     // Update the text content of each html element
-    document.querySelector('.city').textContent = cityName + ', ' + countryName;
+    document.querySelector('.city').textContent = cityName;
     document.querySelector('.current-temp').textContent = Math.floor(convertToCelcius(currentTemp)) + '°';
     document.querySelector('.weather-desc').textContent = makeFirstLetterCapital(weatherDesc);
     document.querySelector('.min-temp').textContent = Math.floor(convertToCelcius(minTemp)) + '°';
     document.querySelector('.max-temp').textContent = Math.floor(convertToCelcius(maxTemp)) + '°';
     document.querySelector('.temps1').textContent = 'MIN';
-    document.querySelector('.temps2').textContent = 'MAX'
+    document.querySelector('.temps2').textContent = 'MAX';
+    // Add icon depending on current weather
+    switch (weatherDesc) {
+      case 'Clear':
+        document.querySelector('.icon').innerHTML = '<i class="fas fa-sun fa-8x"></i>';
+        break;
+      case 'Clouds':
+        document.querySelector('.icon').innerHTML = '<i class="fas fa-cloud fa-8x"></i>';
+        break;
+      case 'Rain':
+        document.querySelector('.icon').innerHTML = '<i class="fas fa-tint fa-8x"></i>';
+        break;
+      case 'Mist':
+        document.querySelector('.icon').innerHTML = '<i class="fas fa-tint fa-8x"></i>';
+        break
+      case 'Snow':
+        document.querySelector('.icon').innerHTML = '<i class="far fa-snowflake fa-8x"></i>';
+        break;
+    }
   });
 }
