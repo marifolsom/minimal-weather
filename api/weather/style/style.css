@@ -42,7 +42,7 @@ form {
   cursor: pointer;
 }
 
-.button:active {
+.button:focus {
   color: #606060;
   opacity: 1;
   background-color: #70cec4;

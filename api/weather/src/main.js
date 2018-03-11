@@ -333,9 +333,11 @@ let makeCelcius = () => {
     temp3 = json.list[16].main.temp;
     temp4 = json.list[24].main.temp;
     temp5 = json.list[32].main.temp;
-    let $forecast = $('.forecast');
-    let $fiveDays = $('<div class="five-days"><h2 class="label day">' + day1 + '</h2> <h2 class="label day">' + day2 + '</h2> <h2 class="label day">' + day3 + '</h2> <h2 class="label day">' + day4 + '</h2> <h2 class="label day">' + day5 + '</h2> <div class="small-icon icon-1"></div> <div class="small-icon icon-2"></div> <div class="small-icon icon-3"></div> <div class="small-icon icon-4"></div> <div class="icon icon-5"></div> <h2 class="label temp-1">' + convertToCelcius(temp1) + '°' + '</h2> <h2 class="label temp-2">' + convertToCelcius(temp2) + '°' + '</h2> <h2 class="label temp-3">' + convertToCelcius(temp3) + '°' + '</h2> <h2 class="label temp-4">' + convertToCelcius(temp4) + '°' + '</h2> <h2 class="label temp-5">' + convertToCelcius(temp5) + '°' + '</h2> </div>');
-    $forecast.html($fiveDays);
+    $('.temp-1').html(convertToCelcius(temp1) + '°');
+    $('.temp-2').html(convertToCelcius(temp2) + '°');
+    $('.temp-3').html(convertToCelcius(temp3) + '°');
+    $('.temp-4').html(convertToCelcius(temp4) + '°');
+    $('.temp-5').html(convertToCelcius(temp5) + '°');
     makeSmallIcons();
   });
 }
@@ -361,9 +363,11 @@ let makeFarenheit = () => {
     temp3 = json.list[16].main.temp;
     temp4 = json.list[24].main.temp;
     temp5 = json.list[32].main.temp;
-    let $forecast = $('.forecast');
-    let $fiveDays = $('<div class="five-days"><h2 class="label day">' + day1 + '</h2> <h2 class="label day">' + day2 + '</h2> <h2 class="label day">' + day3 + '</h2> <h2 class="label day">' + day4 + '</h2> <h2 class="label day">' + day5 + '</h2> <div class="small-icon icon-1"></div> <div class="small-icon icon-2"></div> <div class="small-icon icon-3"></div> <div class="small-icon icon-4"></div> <div class="icon icon-5"></div> <h2 class="label temp-1">' + convertToFarenheit(temp1) + '°' + '</h2> <h2 class="label temp-2">' + convertToFarenheit(temp2) + '°' + '</h2> <h2 class="label temp-3">' + convertToFarenheit(temp3) + '°' + '</h2> <h2 class="label temp-4">' + convertToFarenheit(temp4) + '°' + '</h2> <h2 class="label temp-5">' + convertToFarenheit(temp5) + '°' + '</h2> </div>');
-    $forecast.html($fiveDays);
+    $('.temp-1').html(convertToFarenheit(temp1) + '°');
+    $('.temp-2').html(convertToFarenheit(temp2) + '°');
+    $('.temp-3').html(convertToFarenheit(temp3) + '°');
+    $('.temp-4').html(convertToFarenheit(temp4) + '°');
+    $('.temp-5').html(convertToFarenheit(temp5) + '°');
     makeSmallIcons();
   });
 }
