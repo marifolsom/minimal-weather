@@ -9,9 +9,43 @@ html {
   background-color: #73d7cd;
 }
 
+nav {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-between;
+}
+
 form {
   text-align: right;
   padding: 20px;
+}
+
+.unit-buttons {
+  padding: 20px 20px 20px 20px;
+}
+
+.button {
+  color: #606060;
+  opacity: 0.5;
+  border-radius: 3px;
+  font-size: 15px;
+  text-align: left;
+  display: inline;
+  margin: 0 5px 0 0;
+  padding: 3px 5px;
+}
+
+.button:hover {
+  color: #606060;
+  opacity: 1;
+  background-color: #70cec4;
+  cursor: pointer;
+}
+
+.button:active {
+  color: #606060;
+  opacity: 1;
+  background-color: #70cec4;
 }
 
 input, button {
@@ -33,7 +67,7 @@ h1, h2, p {
 
 h2 {
   font-size: 20px;
-  color: #545454;
+  color: #606060;
   font-weight: light;
 }
 
@@ -82,8 +116,7 @@ p {
 }
 
 .five-days {
-  border-top: 0.25px solid #545454;
-  opacity: 0.8;
+  border-top: 0.25px solid #606060;
   margin: 0 60px 0 60px;
   padding: 30px 0 30px 0;
   display: grid;
