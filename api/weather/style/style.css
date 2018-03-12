@@ -9,7 +9,7 @@
 /* General styling */
 body,
 html {
-  background-color: #73d7cd;
+  background-color: #8dd4cd;
 }
 
 
@@ -49,14 +49,14 @@ input, button {
 .button:hover {
   color: #606060;
   opacity: 1;
-  background-color: #70cec4;
+  background-color: #a3dcd7;
   cursor: pointer;
 }
 
 .button:focus {
   color: #606060;
   opacity: 1;
-  background-color: #70cec4;
+  background-color: #a3dcd7;
 }
 
 
@@ -79,7 +79,7 @@ h2 {
 }
 
 .city {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 h1 {
@@ -286,50 +286,9 @@ p {
 
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) {
-  form {
-    padding: 40px;
-    font-size: 18px;
-  }
-
-  input, button {
-    font-size: 15px;
-  }
-
-  .unit-buttons {
-    padding: 40px;
-  }
-
-  .button {
-    font-size: 18px;
-  }
-
-  .weather-info {
-    padding: 30px 0;
-  }
-
-  h2 {
-    font-size: 25px;
-  }
-
-  h1 {
-    font-size: 70px;
-    margin-top: 30px;
-  }
-
-  p {
-    font-size: 40px;
-    margin: 5px 50px;
-  }
-
-  .forecast {
-    width: 100%;
-    margin: 30px 0 0 0;
-  }
-
   .five-days {
-    margin: 0 150px;
-    padding: 40px 0;
-    grid-gap: 15px 30px;
+    margin: 0 160px;
+    grid-gap: 10px 25px;
   }
 
   .small-icon svg {
@@ -341,11 +300,6 @@ p {
 
 /* Large desktop */
 @media (min-width: 1200px) {
-  .forecast {
-    width: 100%;
-    margin: 30px 0 0 0;
-  }
-
   .five-days {
     margin: 0 400px;
     padding: 40px 0;
