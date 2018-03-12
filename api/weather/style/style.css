@@ -134,13 +134,14 @@ p {
   justify-content: center;
 }
 
-.five-days svg {
+.five-days {
   justify-self: center;
 }
 
-.small-icon svg {
+.small-icon {
   width: 50px;
   height: auto;
+  stroke: #f8f5e9
 }
 
 
