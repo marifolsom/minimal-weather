@@ -2,6 +2,7 @@
 - a media query
 - mobile-first considerations
 */
+
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
 
@@ -24,8 +25,14 @@ form {
   padding: 20px;
 }
 
+input, button {
+  opacity: 0.8;
+  font-family: "Quicksand", "Helvetica", sans-serif;
+  font-size: 12px;
+}
+
 .unit-buttons {
-  padding: 20px 20px 20px 20px;
+  padding: 20px;
 }
 
 .button {
@@ -50,12 +57,6 @@ form {
   color: #606060;
   opacity: 1;
   background-color: #70cec4;
-}
-
-input, button {
-  opacity: 0.8;
-  font-family: "Quicksand", "Helvetica", sans-serif;
-  font-size: 12px;
 }
 
 
@@ -124,8 +125,8 @@ p {
 
 .five-days {
   border-top: 0.25px solid #606060;
-  margin: 0 60px 0 60px;
-  padding: 30px 0 30px 0;
+  margin: 0 60px;
+  padding: 30px 0;
   display: grid;
   grid-template-columns: repeat(5, [day] 50px);
   grid-template-rows: [day] 20px [icon] 50px [temp] 20px;
@@ -280,4 +281,74 @@ p {
 
 .thunder-icon {
   animation: shake 450ms 2 ease-in-out;
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+  form {
+    padding: 40px;
+    font-size: 18px;
+  }
+
+  input, button {
+    font-size: 15px;
+  }
+
+  .unit-buttons {
+    padding: 40px;
+  }
+
+  .button {
+    font-size: 18px;
+  }
+
+  .weather-info {
+    padding: 30px 0;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  h1 {
+    font-size: 70px;
+    margin-top: 30px;
+  }
+
+  p {
+    font-size: 40px;
+    margin: 5px 50px;
+  }
+
+  .forecast {
+    width: 100%;
+    margin: 30px 0 0 0;
+  }
+
+  .five-days {
+    margin: 0 150px;
+    padding: 40px 0;
+    grid-gap: 15px 30px;
+  }
+
+  .small-icon svg {
+    width: 55px;
+    height: auto;
+  }
+}
+
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .forecast {
+    width: 100%;
+    margin: 30px 0 0 0;
+  }
+
+  .five-days {
+    margin: 0 400px;
+    padding: 40px 0;
+    grid-gap: 15px 30px;
+  }
 }
